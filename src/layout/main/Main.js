@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import playersArray from "../../players";
 import "./Main.css";
+import imgURL from "../../assets/shirt.png";
 
 const Main = () => {
   const [players, setPlayers] = useState([]);
@@ -25,7 +26,7 @@ const Main = () => {
     <main className="main">
       <section className="transfer-section">
         <div className="container">
-          <div className="row">
+          <div className="row my-1">
             <div className="col">
               <button
                 className="btn btn-sm my-3 btn-primary"
@@ -36,16 +37,16 @@ const Main = () => {
               </button>
             </div>
           </div>
-          <div className="row">
+          <div className="row my-3">
             <div className="col">
               <div className="card">
                 <div className="card-header">
                   <h3>➕ Add football player</h3>
                 </div>
-                <div className="card-body">
+                <div className="card-body text-center">
                   <div className="row">
                     <div className="col-4">
-                    <h5>Player's age</h5>
+                      <h5>Player's age</h5>
                       <div className="btn-group">
                         <button className="btn btn-secondary">-</button>
                         <button className="btn btn-light" disabled>
@@ -55,7 +56,11 @@ const Main = () => {
                       </div>
                     </div>
                     <div className="col-4">
-                      <img src="" alt="Football player" />
+                      <img
+                        src={imgURL}
+                        className="shirt-img img-fluid"
+                        alt="Football player"
+                      />
                     </div>
                     <div className="col-4">
                       <h5>Player's value</h5>
@@ -69,12 +74,16 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
+                <div className="card-footer">
+                  <button className="btn btn-danger m-1">Cancel</button>
+                  <button className="btn btn-success m-1">Save</button>
+                </div>
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row my-3">
             <div className="col">
-              <table className="table table-light table-striped table-hover">
+              <table className="table table-light table-striped table-hover border table-responsive">
                 <thead>
                   <tr>
                     <th>№</th>
